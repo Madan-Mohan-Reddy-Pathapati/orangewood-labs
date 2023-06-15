@@ -1,0 +1,115 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #ececec;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+#nav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(12, 175, 240);
+    text-align: center;
+    color: white;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav ul {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+#nav ul li {
+    padding: 15px;
+    padding-top: 0px;
+}
+
+#nav ul li:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: large;
+    transition: 200ms;
+}
+
+#nav h1 {
+    margin: 0;
+    float: left;
+}
+
+#Content {
+    text-align: center;
+    margin-top: 100px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 400px;
+    border-radius: 8px;
+    height: 450px;
+    background-color: white;
+    margin-left: 550px;
+    margin-top: 100px;
+    padding-left: 40px;
+    padding-top: 20px;
+
+
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    height: max-content;
+   
+}
+.form-group {
+    margin-bottom: 10px;
+    
+   
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+input[type="text"],
+textarea {
+
+    width: 70%;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    height: 90px;
+}
+.submit-btn {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #1875FF;
+    color: white;
+    font-family: inherit;
+    text-align: center;
+    font-size: 10px;
+    margin-left: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 29em;
+    padding: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+    height: 35px;
+    font-weight: bolder;
+}
+.success-message {
+    color: #4CAF50;
+    margin-top: 2px;
+}

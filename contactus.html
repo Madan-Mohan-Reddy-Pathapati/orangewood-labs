@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contastus.css">
+    <style>
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <h1>Orangewood Labs</h1>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="Content">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <p id="name-error" class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <p id="email-error" class="error-message"></p>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <p id="message-error" class="error-message"></p>
+                </div>
+                <button class="submit-btn" type="submit">Submit</button>
+                <p class="success-message" id="success-message"></p>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var message = document.getElementById("message").value;
+                
+                // Validation
+                var nameError = document.getElementById("name-error");
+                var emailError = document.getElementById("email-error");
+                var messageError = document.getElementById("message-error");
+                var isValid = true;
+                
+                // Name validation
+                if (name.trim() === "") {
+                    nameError.textContent = "Name is required";
+                    isValid = false;
+                } else if (!isValidName(name)) {
+                    nameError.textContent = "Please enter a valid name (only alphabets)";
+                    isValid = false;
+                } else {
+                    nameError.textContent = "";
+                }
+                
+                // Email validation
+                if (!isValidEmail(email)) {
+                    emailError.textContent = "Please enter a valid email address";
+                    isValid = false;
+                } else {
+                    emailError.textContent = "";
+                }
+                
+                // Message validation
+                if (message.trim() === "") {
+                    messageError.textContent = "Message is required";
+                    isValid = false;
+                } else {
+                    messageError.textContent = "";
+                }
+                
+                if (isValid) {
+                    // You can add your own logic here to handle form submission, such as sending an email or saving the data
+
+                    // Clear form fields
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("message").value = "";
+
+                    // Display success message
+                    document.getElementById("success-message").textContent = "Your message has been sent!";
+                }
+            });
+            
+            function isValidName(name) {
+                // Only allow alphabets in the name field
+                var regex = /^[A-Za-z]+$/;
+                return regex.test(name);
+            }
+            
+            function isValidEmail(email) {
+                // Simple email validation using regular expression
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+        </script>
+    </div>
+</body>
+
+</html>
