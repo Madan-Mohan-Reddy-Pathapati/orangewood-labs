@@ -1,5 +1,5 @@
 # 2nd Round - Orangewood Labs
-scenarios selected:-
+scenario selected:-
 
 Front-End Development Task: Create a Single Web Page
 Task: Develop a simple webpage that presents information about a robot product of your choice. The
